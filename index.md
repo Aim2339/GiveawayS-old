@@ -78,3 +78,36 @@ Having trouble with the bot? Please let me know by using the inbuilt **`/feedbac
 **User:** **`Aim#2339`**
 
 ---
+
+<html>
+  .btn {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 17px;
+  cursor: pointer;
+  }
+  
+  .success {
+  border-color: #04aa6d;
+  color: green;
+  }
+  .success:hover {
+  background-color: #04aa6d;
+  color: white;
+  }
+  
+  .info {
+  border-color: #2196f3;
+  color: dodgerblue;
+  }
+  .info:hover {
+    background-color: #2196f3;
+  color: white;
+<body>
+  <button class="btn success">Success</button>
+  <button class="btn info">Info</button>
+</body>
+  </html>
