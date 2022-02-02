@@ -93,6 +93,17 @@ module.exports = {
         content: ':x: Please select a valid winner count! greater or equal to one.',
       })
     }
+        if (giveawayChannel.isThread()) {
+      module.exports = (client) => {
+        client.on('threadCreate', (thread) => {
+          try {
+            thread.join()
+          } catch (e) {
+            console.log(e);
+          }
+        })
+      }
+    }
         if (bonusRole) {
       if (!bonusEntries) {
         return interaction.reply({
