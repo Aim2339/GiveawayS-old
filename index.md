@@ -31,6 +31,8 @@ The bot's prefix is **/** and currently has **18** commands registered to it!
 
 **`/delete`** - Delete an ended giveaway!
 
+**`/log`** - Create a log channel for giveaway-logs
+
 ### General commands:- ⚙️
 
 **`/help`** - Show a list of available bot commands with description!
