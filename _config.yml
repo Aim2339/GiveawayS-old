@@ -2,3 +2,4 @@ theme: jekyll-theme-cayman
 title: GiveawayS
 description: GiveawayS is an easy to use, feature-rich giveaway-bot created with discord-giveaways package in node v17!
 url: https://aim2339.github.io/GiveawayS/
+color_scheme: dark
