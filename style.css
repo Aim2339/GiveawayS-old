@@ -127,3 +127,22 @@ h1{
   font-size: 36px;
   font-weight: 600;
 }
+
+.row{
+  margin-top: 5%;
+  dispay: flex;
+  justify-content: space-between;
+}
+.introduction-col{
+  flex-basis: 31%;
+  background: #fff3f3;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+}
+h3{
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
