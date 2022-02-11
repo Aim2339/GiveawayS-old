@@ -155,3 +155,23 @@ h3{
     flex-direction: column;
   }
 }
+
+/*--------Commands--------*/
+
+.command{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;  
+}
+h1{
+  font-size: 36px;
+  font-weight: 600;
+}
+p{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
