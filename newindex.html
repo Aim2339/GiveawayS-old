@@ -12,8 +12,8 @@
     <section class="header">
       <nav>
         <a href="newindex.html"><img src="ga.jpg"></a>
-        <div class="nav-links">
-          <i class="fa fa-times"></i>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
             <li><a href="">HOME</a></li>
             <li><a href="">INTRODUCTION</a></li>
@@ -22,7 +22,7 @@
             <li><a href="">CONTACT</a></li>
           </ul>
         </div>
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
       
      <div class="text-box">
@@ -31,5 +31,20 @@
        <a href="" class="hero-btn">Invite</a>
       </div>
     </section>
+    
+    <!--------Javascript for Toggle Menu-------->
+    <script>
+      
+      var navLinks = document.getElementById("navLinks");
+      
+      function showMenu(){
+        navLinks.style.right = "0";
+      }
+      function hideMenu(){
+        newLinks.style.right = "-200px";
+      }
+      
+    </script>
+    
   </body>
 </html>
