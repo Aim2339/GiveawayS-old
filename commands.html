@@ -1,28 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
 <style>
-table, th, td {
-  border:1px solid black;
+#names {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#names td, #names th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#names tr:nth-child(even){background-color: #f2f2f2;}
+
+#names tr:hover {background-color: #ddd;}
+
+#names th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
 }
 </style>
+</head>
 <body>
 
-<h2>Giveaway Commands</h2>
+<h1>List of Commands</h1>
 
-<table style="width:100%">
+<table id="names">
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Category</th>
   </tr>
   <tr>
-    <td><b>/create</b></td>
+    <td>/create</td>
     <td>Start a giveaway in your server!</td>
+    <td>Giveaway</td>
   </tr>
   <tr>
-    <td><b>/edit</b></td>
+    <td>/edit</td>
     <td>Edit an already running giveaway!</td>
+    <td>Giveaway</td>
+  </tr>
+  <tr>
+    <td>/end</td>
+    <td>End an already running giveaway!</td>
+    <td>Giveaway</td>
+  </tr>
+  <tr>
+    <td>/list</td>
+    <td>List all the giveaways running within your server!</td>
+    <td>Giveaway</td>
+  </tr>
+  <tr>
+    <td>/pause</td>
+    <td>Pause an already running giveaway!</td>
+    <td>Giveaway</td>
+  </tr>
+  <tr>
+    <td>/resume</td>
+    <td>Resume a paused giveaway!</td>
+    <td>Giveaway</td>
+  </tr>
+  <tr>
+    <td>/reroll</td>
+    <td>Reroll an ended giveaway!</td>
+    <td>Giveaway</td>
+  </tr>
+  <tr>
+    <td>/delete</td>
+    <td>Delete an ended giveaway!</td>
+    <td>Giveaway</td>
+  </tr>
+  <tr>
+    <td>/log</td>
+    <td>Create a log channel for giveaway-logs</td>
+    <td>Giveaway</td>
   </tr>
 </table>
 
 </body>
 </html>
+
+
