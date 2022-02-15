@@ -1,169 +1,107 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <link rel="shortcut icon" type="image/jpg" href="ga.jpg">
-<style>
+<html lang="en">
 
-#names {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+  <head>
+    <title>GiveawayS</title>
+    <link rel="shortcut icon" type="image/jpg" href="ga.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  </head>
 
-#names td, #names th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+  <div>
+    <header>
+      <h1>GiveawayS</h1>
+      <img class="avatar" src="https://cdn.discordapp.com/avatars/900628889452314674/cad35692a09c70b433846656df2099ac.webp?size=128" alt="bot's avatar">
+      <h3>GiveawayS is an easy to use, feature-rich giveaway-bot created with discord-giveaways package in node v17!</h3>
+      <p class="description">This bot facilitates the creation of giveaways in your guild!<br>It is loaded with amazing features and easy to use and handle!<br>The bot's prefix is / and currently has 19 commands registered to it!</p>
+    </header>
 
-#names tr:nth-child(even){background-color: #4d5450;}
+    <body>
+      <div class="buttons">
+        <button class="btn" onclick="location.href = 'https://aim2339.github.io/GiveawayS/commands'">Commands</button>
+        <button class="btn">Invite</button>
+        <button class="btn">Support</button>
+      </div>
+    </body>
+  </div>
 
-#names tr:hover {background-color: #de1241;}
+  <style>
+    .btn {
+      background-color: #4287f5;
+      color: #fff7fa;
+      font-size: 20px;
+      transition-duration: 0.5s;
+      border: 2px solid #ff96ad;
+      border-radius: 8px;
+      font-family: 'Fredoka One', cursive;
+    }
 
-#names th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
-}
-h1 {
-text-align: center;
-font-size: 250%;
-color: #e64090;
-}
-td {
- color: #ffffff;
-}
-body {
-background-color: #232626;
-}
-</style>
-</head>
-<body>
+    .buttons {
+      text-align: center;
+    }
 
-<h1>Giveaway Commands</h1>
+    .btn:hover {
+      background: #ff96ad;
+      box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad;
+      cursor: pointer;
+    }
 
-<table id="names">
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Category</th>
-  </tr>
-  <tr>
-    <td><b>/create</b></td>
-    <td><b>Start a giveaway in your server!</b></td>
-    <td><b>Giveaway 🎉</b></td>
-  </tr>
-  <tr>
-    <td><b>/edit</b></td>
-    <td><b>Edit an already running giveaway!</b></td>
-    <td><b>Giveaway 🎉</b></td>
-  </tr>
-  <tr>
-    <td><b>/end</b></td>
-    <td><b>End an already running giveaway!</b></td>
-    <td><b>Giveaway 🎉</b></td>
-  </tr>
-  <tr>
-    <td><b>/list</b></td>
-    <td><b>List all the giveaways running within your server!</b></td>
-    <td><b>Giveaway 🎉</b></td>
-  </tr>
-  <tr>
-    <td><b>/pause</b></td>
-    <td><b>Pause an already running giveaway!</b></td>
-    <td><b>Giveaway 🎉</b></td>
-  </tr>
-  <tr>
-    <td><b>/resume</b></td>
-    <td><b>Resume a paused giveaway!</b></td>
-    <td><b>Giveaway 🎉</b></td>
-  </tr>
-  <tr>
-    <td><b>/reroll</b></td>
-    <td><b>Reroll an ended giveaway!</b></td>
-    <td><b>Giveaway 🎉</b></td>
-  </tr>
-  <tr>
-    <td><b>/delete</b></td>
-    <td><b>Delete an ended giveaway!</b></td>
-    <td><b>Giveaway 🎉</b></td>
-  </tr>
-  <tr>
-    <td><b>/log</b></td>
-    <td><b>Create a log channel for giveaway-logs</b></td>
-    <td><b>Giveaway 🎉</b></td>
-  </tr>
-</table>
+    h2 {
+      font-size: 145%;
+      font-family: 'Knewave', cursive;
+      color: #9f52de;
+    }
 
-<h1>General Commands</h1>
+    h1 {
+      font-family: 'Fredoka One', cursive;
+      text-align: center;
+      font-size: 300%;
+      color: #e64090;
+    }
 
-<table id="names">
-  <tr>
-    <th><b>Name</th>
-    <th><b>Description</th>
-    <th><b>Category</th>
-  </tr>
-  <tr>
-    <td><b>/help</b></td>
-    <td><b>Show a list of available bot commands with description!</b></td>
-    <td><b>General ⚙️</b></td>
-  </tr>
-  <tr>
-    <td><b>/invite</b></td>
-    <td><b>Get the bot's invite link!</b></td>
-    <td><b>General ⚙️</b></td>
-  </tr>
-  <tr>
-    <td><b>/ping</b></td>
-    <td><b>Check the bot's websocket latency!</b></td>
-    <td><b>General ⚙️</b></td>
-  </tr>
-  <tr>
-    <td><b>/vote</b></td>
-    <td><b>Vote for the bot on top.gg!</b></td>
-    <td><b>General ⚙️</b></td>
-  </tr>
-  <tr>
-    <td><b>/links</b></td>
-    <td><b>Get a list of links related to the bot!</b></td>
-    <td><b>General ⚙️</b></td>
-  </tr>
-  <tr>
-    <td><b>/stats</b></td>
-    <td><b>Check the bot's physical statistics!</b></td>
-    <td><b>General ⚙️</b></td>
-  </tr>
-  <tr>
-    <td><b>/feedback</b></td>
-    <td><b>Send feedback about the bot to the developer</b></td>
-    <td><b>General ⚙️</b></td>
-  </tr>
-  <tr>
-    <td><b>/faq</b></td>
-    <td><b>Frequently Asked Questions of the bot!</b></td>
-    <td><b>General ⚙️</b></td>
-  </tr>
-  <tr>
-    <td><b>/updates</b></td>
-    <td><b>Get the latest news and updates from the developer!</b></td>
-    <td><b>General ⚙️</b></td>
-  </tr>
-</table>
+    .description {
+      color: rgb(22, 196, 97);
+      text-align: center;
+      font-family: 'Fredoka One', cursive;
+    }
 
-<h1>Fun Commands</h1>
+    .avatar {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 4px solid #46edf2;
+      border-radius: 100%;
+      width: 20%;
+      height: 20%;
+      -webkit-transform: -webkit-transform .8s ease-in-out;
+      transition: transform .8s ease-in-out;
+    }
 
-<table id="names">
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Category</th>
-  </tr>
-  <tr>
-    <td><b>/rps</b></td>
-    <td><b>Play rock paper scissors with the bot!</b></td>
-    <td><b>Fun 😆</b></td>
-  </tr>
-</table>
-</body>
+    .avatar:hover {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg)
+    }
+
+    p,
+    span {
+      color: #46edf2;
+    }
+
+    body {
+      background-color: #232626;
+    }
+
+    h3 {
+      color: #7289da;
+      font-family: 'Knewave', cursive;
+      text-align: center;
+      font-size: 150%
+    }
+
+    hr {
+      border-color: #2fc4c4;
+    }
+    </style>
 </html>
