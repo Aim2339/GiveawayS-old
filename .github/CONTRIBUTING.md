@@ -35,7 +35,6 @@ There are a number of guidelines considered when reviewing Pull Requests to be m
 
 <!-- Code -->
 [commit convention]: https://www.conventionalcommits.org/en/v1.0.0/
-[discord server]: https://discord.gg/ARu4hr6hJw
 [node.js]: https://nodejs.org/en/download/
-[here]: https://github.com/ZeroDiscord/Giveaway/pulls
+[here]: https://github.com/Aim2339/GiveawayS/pulls
 [oop paradigms]: https://en.wikipedia.org/wiki/Object-oriented_programming
