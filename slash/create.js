@@ -51,6 +51,12 @@ module.exports = {
       required: false,
     },
     {
+      name: "reqrole",
+      description: "Role you want to add as giveaway joining requirement",
+      type: "ROLE",
+      required: false,
+    },
+    {
       name: "note",
       description:
         "Anything you wanna type (can include requirements/how to claim)",
@@ -80,6 +86,7 @@ module.exports = {
     const bonusRole = interaction.options.getRole("bonusrole");
     const bonusEntries = interaction.options.getInteger("bonusamount");
     const giveawayNote = interaction.options.getString("note");
+    let rolereq = interaction.options.getRole("reqrole");
 
     const logChannel = interaction.guild.channels.cache.find(
       (channel) => channel.name === "giveaway-log"
@@ -123,10 +130,16 @@ module.exports = {
       }
     }
 
-    if (bonusRole) {
+    if (bonusRole && rolereq) {
+      messages.inviteToParticipate = `**React with 🎉 to participate!**\n>>> **${bonusRole}** Has **${bonusEntries}** Extra Entries in this giveaway!\nOnly members having ${rolereq} are allowed to participate in this giveaway!`;
+    }
+    if (!bonusRole && rolereq) {
+      messages.inviteToParticipate = `**React with 🎉 to participate!**\n>>> Only members having ${rolereq} are allowed to participate in this giveaway!`;
+    }
+    if (bonusRole && !rolereq) {
       messages.inviteToParticipate = `**React with 🎉 to participate!**\n>>> **${bonusRole}** Has **${bonusEntries}** Extra Entries in this giveaway!`;
     }
-    if (!bonusRole) {
+    if (!bonusRole && !rolereq) {
       messages.inviteToParticipate = `**React with 🎉 to participate!**`;
     }
 
@@ -144,7 +157,7 @@ module.exports = {
       );
 
     let msg = await interaction.reply({
-      content: `**Is everything correct?**\n>>> >>> - Channel: ${giveawayChannel}\n>>> - Duration: ${giveawayDuration}\n>>> - Winners: ${giveawayWinnerCount}\n>>> - Prize: ${giveawayPrize}\n>>> - Role to ping: ${giveawayPing}\n>>> - Bonus role: ${bonusRole}\n>>> - Bonus amount: ${bonusEntries}\n>>> - Note: ${giveawayNote}`,
+      content: `**Is everything correct?**\n>>> >>> - Channel: ${giveawayChannel}\n>>> - Duration: ${giveawayDuration}\n>>> - Winners: ${giveawayWinnerCount}\n>>> - Prize: ${giveawayPrize}\n>>> - Role to ping: ${giveawayPing}\n>>> - Bonus role: ${bonusRole}\n>>> - Bonus amount: ${bonusEntries}\n>>> - Requirement role: ${rolereq}\n>>> - Note: ${giveawayNote}`,
       ephemeral: false,
       fetchReply: true,
     });
@@ -184,6 +197,9 @@ module.exports = {
               },
             ],
             messages,
+            extraData: {
+              role: rolereq == null ? "null" : rolereq.id,
+            },
           });
           msg.reactions.removeAll();
 
