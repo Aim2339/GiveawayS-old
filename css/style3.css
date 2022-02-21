@@ -1,0 +1,52 @@
+.btn {
+	background-color: #4287f5;
+	color: #fff7fa;
+	font-size: 20px;
+	transition-duration: 0.5s;
+	border: 2px solid #16c7b5;
+	border-radius: 8px;
+	font-family: 'Fredoka One', cursive;
+}
+
+.buttons {
+	text-align: center;
+}
+
+.btn:hover {
+	background: #16c7b5;
+	box-shadow: 0 0 5px #16c7b5, 0 0 25px #16c7b5, 0 0 50px #16c7b5;
+	cursor: pointer;
+}
+
+h1 {
+	font-family: 'Fredoka One', cursive;
+	text-align: center;
+	font-size: 300%;
+	color: #e64090;
+}
+
+.description {
+	color: rgb(22, 196, 97);
+	text-align: center;
+	font-family: 'Fredoka One', cursive;
+}
+
+p,
+span {
+	color: #46edf2;
+}
+
+body {
+	background-color: #232626;
+}
+
+h3 {
+	color: #7289da;
+	font-family: 'Knewave', cursive;
+	text-align: center;
+	font-size: 150%
+}
+
+hr {
+	border-color: #2fc4c4;
+}
