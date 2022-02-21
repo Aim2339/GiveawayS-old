@@ -57,6 +57,12 @@ module.exports = {
       required: false,
     },
     {
+      name: "thumbnail",
+      description: "Img/gif you want to add to the giveaway",
+      type: "STRING",
+      required: false,
+    },
+    {
       name: "note",
       description:
         "Anything you wanna type (can include requirements/how to claim)",
@@ -86,6 +92,7 @@ module.exports = {
     const bonusRole = interaction.options.getRole("bonusrole");
     const bonusEntries = interaction.options.getInteger("bonusamount");
     const giveawayNote = interaction.options.getString("note");
+    const thumbnail = interaction.options.getString("thumbnail");
     let rolereq = interaction.options.getRole("reqrole");
 
     const logChannel = interaction.guild.channels.cache.find(
@@ -121,6 +128,7 @@ module.exports = {
         });
       };
     }
+
     if (bonusRole) {
       if (!bonusEntries) {
         return interaction.reply({
@@ -129,7 +137,30 @@ module.exports = {
         });
       }
     }
-
+    if (thumbnail) {
+      if (
+        !(thumbnail.startsWith("https://") || thumbnail.startsWith("http://"))
+      ) {
+        return interaction.reply({
+          content: `:x: Thumbnail needs to start with http/https and end with .png/.jpg/.gif!`,
+          ephemeral: true,
+        });
+      }
+    }
+    if (thumbnail) {
+      if (
+        !(
+          thumbnail.endsWith(".gif") ||
+          thumbnail.endsWith(".png") ||
+          thumbnail.endsWith(".jpg")
+        )
+      ) {
+        return interaction.reply({
+          content: `:x: Thumbnail needs to start with http/https and end with .png/.jpg/.gif!`,
+          ephemeral: true,
+        });
+      }
+    }
     if (bonusRole && rolereq) {
       messages.inviteToParticipate = `**React with 🎉 to participate!**\n>>> **${bonusRole}** Has **${bonusEntries}** Extra Entries in this giveaway!\nOnly members having ${rolereq} are allowed to participate in this giveaway!`;
     }
@@ -157,7 +188,7 @@ module.exports = {
       );
 
     let msg = await interaction.reply({
-      content: `**Is everything correct?**\n>>> >>> - Channel: ${giveawayChannel}\n>>> - Duration: ${giveawayDuration}\n>>> - Winners: ${giveawayWinnerCount}\n>>> - Prize: ${giveawayPrize}\n>>> - Role to ping: ${giveawayPing}\n>>> - Bonus role: ${bonusRole}\n>>> - Bonus amount: ${bonusEntries}\n>>> - Requirement role: ${rolereq}\n>>> - Note: ${giveawayNote}`,
+      content: `**Is everything correct?**\n>>> >>> - Channel: ${giveawayChannel}\n>>> - Duration: ${giveawayDuration}\n>>> - Winners: ${giveawayWinnerCount}\n>>> - Prize: ${giveawayPrize}\n>>> - Role to ping: ${giveawayPing}\n>>> - Bonus role: ${bonusRole}\n>>> - Bonus amount: ${bonusEntries}\n>>> - Requirement role: ${rolereq}\n>>> - Thumbnail: ${thumbnail}\n>>> - Note: ${giveawayNote}`,
       ephemeral: false,
       fetchReply: true,
     });
@@ -185,10 +216,11 @@ module.exports = {
             winnerCount: parseInt(giveawayWinnerCount),
             // The giveaway host
             hostedBy: `<@!${interaction.user.id}>`,
+            // Thumbnail if provided
+            thumbnail: thumbnail,
             // BonusEntries If Provided
             bonusEntries: [
               {
-                // Members who have the role which is assigned to "rolename" get the amount of bonus entries which are assigned to "BonusEntries"
                 bonus: new Function(
                   "member",
                   `return member.roles.cache.some((r) => r.name === \'${bonusRole?.name}\') ? ${bonusEntries} : null`
