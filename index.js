@@ -77,13 +77,13 @@ client.on("ready", () => {
 
 client.on("messageCreate", (message) => {
   const channel = message.channel.id;
-  if (message.content === "<@!900628889452314674>") {
+  if (message.content === `${client.user}`) {
     if (
       message.guild.me
         .permissionsIn(channel)
         .has(["SEND_MESSAGES", "READ_MESSAGE_HISTORY"])
     ) {
-      message.channel.send(
+      message.reply(
         `Hi ${message.author}, my prefix is \`/\`\nIf you are new then start by doing \`/help\` for a list of commands!`
       );
     } else {
