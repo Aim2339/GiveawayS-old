@@ -12,9 +12,8 @@ module.exports = {
       .setTitle(`Commands of ${client.user.username}`)
       .setColor("RANDOM")
       .setDescription("**Please Select a category to view all its commands**")
-      .addField(`Currently 19 commands are registered to the bot!`, `:`, true)
+      .addField(`Currently 18 commands are registered to the bot!`, `:`, true)
       .setThumbnail(client.user.displayAvatarURL())
-
       .setTimestamp()
       .setFooter(
         `Requested by ${interaction.user.username} | GiveawayS`,
@@ -115,11 +114,6 @@ module.exports = {
         {
           name: "__Stats__",
           value: `Check the bot's physical statistics!\n > **How?: \`/stats\`**`,
-          inline: true,
-        },
-        {
-          name: "__Faq__",
-          value: `Frequently Asked Questions of the bot!\n > **How?: \`/faq\`**`,
           inline: true,
         },
         {
