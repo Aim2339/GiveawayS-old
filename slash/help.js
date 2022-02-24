@@ -115,11 +115,6 @@ module.exports = {
           name: "__Stats__",
           value: `Check the bot's physical statistics!\n > **How?: \`/stats\`**`,
           inline: true,
-        },
-        {
-          name: "__Updates__",
-          value: `Get the latest news and updates from the developer!\n > **How?: \`/updates\`**`,
-          inline: true,
         }
       )
       .setTimestamp()
@@ -132,11 +127,18 @@ module.exports = {
       .setTitle("Categories » Fun")
       .setColor("RANDOM")
       .setDescription("```yaml\nHere are the fun based commands:```")
-      .addFields({
-        name: "__Rps__",
-        value: `Play rock paper scissors with the bot!\n > **How?: \`/rps\`**`,
-        inline: true,
-      })
+      .addFields(
+        {
+          name: "__Rps__",
+          value: `Play rock paper scissors with the bot!\n > **How?: \`/rps\`**`,
+          inline: true,
+        },
+        {
+          name: "__Randomcolor__",
+          description: `Get a random color with its hex code!\n > **How?: \`/randomcolor\`**`,
+          inline: true,
+        }
+      )
       .setTimestamp()
       .setFooter(
         `Requested by ${interaction.user.username} | GiveawayS`,
