@@ -135,7 +135,7 @@ module.exports = {
         },
         {
           name: "__Randomcolor__",
-          description: `Get a random color with its hex code!\n > **How?: \`/randomcolor\`**`,
+          value: `Get a random color with its hex code!\n > **How?: \`/randomcolor\`**`,
           inline: true,
         }
       )
