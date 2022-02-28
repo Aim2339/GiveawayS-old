@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const chalk = require("chalk");
 
 module.exports = async (
   client,
@@ -18,8 +19,12 @@ module.exports = async (
     options.guildId && { guildId: options.guildId }
   );
 
-  log(`Synchronizing commands...`);
-  log(`Currently ${currentCommands.size} commands are registered to the bot.`);
+  log(chalk.magentaBright(`Synchronizing commands...`));
+  log(
+    chalk.magentaBright(
+      `Currently ${currentCommands.size} commands are registered to the bot!`
+    )
+  );
 
   const newCommands = commands.filter(
     (command) => !currentCommands.some((c) => c.name === command.name)
@@ -28,7 +33,7 @@ module.exports = async (
     await client.application.commands.create(newCommand, options.guildId);
   }
 
-  log(`Created ${newCommands.length} commands!`);
+  log(chalk.magentaBright(`Created ${newCommands.length} commands!`));
 
   const deletedCommands = currentCommands
     .filter((command) => !commands.some((c) => c.name === command.name))
@@ -37,7 +42,7 @@ module.exports = async (
     await deletedCommand.delete();
   }
 
-  log(`Deleted ${deletedCommands.length} commands!`);
+  log(chalk.magentaBright(`Deleted ${deletedCommands.length} commands!`));
 
   const updatedCommands = commands.filter((command) =>
     currentCommands.some((c) => c.name === command.name)
@@ -63,9 +68,9 @@ module.exports = async (
     }
   }
 
-  log(`Updated ${updatedCommandCount} commands!`);
+  log(chalk.magentaBright(`Updated ${updatedCommandCount} commands!`));
 
-  log(`Commands synchronized!`);
+  log(chalk.magentaBright(`Commands synchronized!`));
 
   return {
     currentCommandCount: currentCommands.size,
