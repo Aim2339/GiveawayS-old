@@ -4,6 +4,7 @@ const client = new Discord.Client({ intents: 7753 });
 const { AutoPoster } = require("topgg-autoposter");
 const ap = AutoPoster(process.env.TOPGG_TOKEN, client);
 const fs = require("fs");
+const chalk = require("chalk");
 const config = require("./config.json");
 client.config = config;
 
@@ -24,7 +25,7 @@ client.giveawaysManager = new GiveawaysManager(client, {
 });
 
 ap.on("posted", () => {
-  console.log("Posted stats to Top.gg!");
+  console.log(chalk.yellowBright("Posted stats to Top.gg!"));
 });
 
 fs.readdir("./events/discord", (_err, files) => {
@@ -32,7 +33,7 @@ fs.readdir("./events/discord", (_err, files) => {
     if (!file.endsWith(".js")) return;
     const event = require(`./events/discord/${file}`);
     let eventName = file.split(".")[0];
-    console.log(`[Event]   ✅  Loaded: ${eventName}`);
+    console.log(chalk.blue(`[Event]   ✅  Loaded: ${eventName}`));
     client.on(eventName, event.bind(null, client));
     delete require.cache[require.resolve(`./events/discord/${file}`)];
   });
@@ -43,7 +44,7 @@ fs.readdir("./events/giveaways", (_err, files) => {
     if (!file.endsWith(".js")) return;
     const event = require(`./events/giveaways/${file}`);
     let eventName = file.split(".")[0];
-    console.log(`[Event]   🎉 Loaded: ${eventName}`);
+    console.log(chalk.blue(`[Event]   🎉 Loaded: ${eventName}`));
     client.giveawaysManager.on(eventName, (...file) =>
       event.execute(...file, client)
     ),
@@ -77,7 +78,7 @@ client.on("ready", () => {
 
 client.on("messageCreate", (message) => {
   const channel = message.channel.id;
-  if (message.content === `${client.user}`) {
+  if (message.content === "<@!900628889452314674>") {
     if (
       message.guild.me
         .permissionsIn(channel)
