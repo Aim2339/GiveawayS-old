@@ -33,7 +33,7 @@
     "node": "17.x"
   },
   "devDependencies": {
-    "node": "^17.4.0",
+    "node": "^17.5.0",
     "prettier": "2.5.1"
   },
   "bugs": {
