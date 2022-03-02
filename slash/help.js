@@ -12,7 +12,7 @@ module.exports = {
       .setTitle(`Commands of ${client.user.username}`)
       .setColor("RANDOM")
       .setDescription("**Please Select a category to view all its commands**")
-      .addField(`Currently 18 commands are registered to the bot!`, `:`, true)
+      .addField(`Currently 19 commands are registered to the bot!`, `:`, true)
       .setThumbnail(client.user.displayAvatarURL())
       .setTimestamp()
       .setFooter(
@@ -114,6 +114,11 @@ module.exports = {
         {
           name: "__Stats__",
           value: `Check the bot's physical statistics!\n > **How?: \`/stats\`**`,
+          inline: true,
+        },
+        {
+          name: "__Shardinfo__",
+          value: `Get info about the bot's shards!\n > **How?: \`/shardinfo\`**`,
           inline: true,
         }
       )
