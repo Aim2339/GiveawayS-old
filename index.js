@@ -8,8 +8,44 @@ const chalk = require("chalk");
 const config = require("./config.json");
 client.config = config;
 
+const promises = [
+  client.shard.fetchClientValues("guilds.cache.size"),
+  client.shard.broadcastEval((c) =>
+    c.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)
+  ),
+];
+
+Promise.all(promises)
+  .then((results) => {
+    const totalGuilds = results[0].reduce(
+      (acc, guildCount) => acc + guildCount,
+      0
+    );
+    const totalMembers = results[1].reduce(
+      (acc, memberCount) => acc + memberCount,
+      0
+    );
+    return console.log(
+      chalk.red(
+        `Shard info:\nServer count: ${totalGuilds}\nMember count: ${totalMembers}`
+      )
+    );
+  })
+  .catch(console.error);
+
+// Extends the GiveawaysManager class and update the refreshStorage method
 const { GiveawaysManager } = require("discord-giveaways");
-client.giveawaysManager = new GiveawaysManager(client, {
+const GiveawayManagerWithShardSupport = class extends GiveawaysManager {
+  // The refreshStorage method is called when the database is updated on one of the shards
+  async refreshStorage() {
+    // This should make all shards refresh their cache with the updated database
+    return client.shard.broadcastEval(() =>
+      this.giveawaysManager.getAllGiveaways()
+    );
+  }
+};
+
+client.giveawaysManager = new GiveawayManagerWithShardSupport(client, {
   storage: "./storage/giveaways.json",
   default: {
     botsCanWin: false,
