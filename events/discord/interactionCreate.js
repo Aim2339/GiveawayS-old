@@ -8,6 +8,15 @@ module.exports = (client, interaction) => {
         ephemeral: true,
       });
 
-    command.run(client, interaction);
+    let suspend = false;
+
+    if (suspend == true) {
+      return interaction.reply({
+        content: `Maintenance mode is on!\nThe bot is currently under maintenance and isn't usable as of now!`,
+        ephemeral: true,
+      });
+    } else if (suspend == false) {
+      command.run(client, interaction);
+    }
   }
 };
