@@ -31,6 +31,11 @@ module.exports = {
           inline: true,
         },
         {
+          name: "__Drop__",
+          value: `Create a drop giveaway!\n > **How?: \`/drop\`**`,
+          inline: true,
+        },
+        {
           name: "__Edit__",
           value: `Edit an already running giveaway!\n > **How?: \`/edit\`**`,
           inline: true,
@@ -114,11 +119,6 @@ module.exports = {
         {
           name: "__Stats__",
           value: `Check the bot's physical statistics!\n > **How?: \`/stats\`**`,
-          inline: true,
-        },
-        {
-          name: "__Shardinfo__",
-          value: `Get info about the bot's shards!\n > **How?: \`/shardinfo\`**`,
           inline: true,
         }
       )
