@@ -2,10 +2,10 @@
 ### Create giveaways on Discord faster and easier using GiveawayS! Start using the bot by doing `/help`
 
 <div align="left"> 
-  <a href="https://github.com/Aim233/GiveawayS/" > 
+  <a href="https://github.com/Aim2339/GiveawayS/" > 
     <img src="https://img.shields.io/github/repo-size/Aim2339/GiveawayS?label=Repo%20Size&color=orange" alt="repo size" >
   <a/>  
-   <a href="https://github.com/Aim233/GiveawayS/" > 
+   <a href="https://github.com/Aim2339/GiveawayS/" > 
     <img src="https://img.shields.io/github/last-commit/Aim2339/GiveawayS?label=Last%20Updated" alt="last updated" >
   <a/>
    <a href="https://github.com/Aim2339/GiveawayS/commits/master" > 
