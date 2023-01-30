@@ -1,3 +1,6 @@
+# ⚠️ This version of the bot is outdated and the code is very messy. So please don't use it!
+##  📈 Check out the new version of the bot here: https://github.com/Aim2339/GiveawayS
+
 # GiveawayS
 ### Create giveaways on Discord faster and easier using GiveawayS! Start using the bot by doing `/help`
 
